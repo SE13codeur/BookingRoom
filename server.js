@@ -1,8 +1,9 @@
 import express from 'express'
-import routes from './routes/routes.js'
-import dotenv from 'dotenv'
-
 import mongoose from 'mongoose'
+
+import routes from './routes/routes.js'
+
+import dotenv from 'dotenv'
 dotenv.config()
 
 const PORT = process.env.PORT || 888
@@ -21,4 +22,4 @@ mongoose.connect(process.env.MONGODB, {
 
 app.listen(PORT, () => {
     console.log(`The server is working on ${PORT}`)
-} )
+})

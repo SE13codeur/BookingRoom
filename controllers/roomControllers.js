@@ -15,13 +15,22 @@ export const getRooms = async (_, res) => {
 
 // read one room
 export const getRoom = async (req, res) => {
-    const room = await RoomModel.findById({ _id: req.params.id })
-    res.send(room)
+    const rooms = await RoomModel.find({ _id: req.params.id })
+    res.send(rooms[0])
 }
 
-// update
+// update one room
 export const updateRoom = async (req, res) => {
     const room = await RoomModel.findByIdAndUpdate(req.params.id, req.body)
     await room.save()
     res.send(room)
+}
+
+// delete one room
+export const deleteRoom = async (req, res) => {
+    const room = await RoomModel.findByIdAndDelete(req.params.id)
+    if (!room) {
+        res.status(404).send('Here, there is no room :(')
+    }
+    res.status(200).send()
 }
