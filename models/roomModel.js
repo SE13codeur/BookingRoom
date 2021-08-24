@@ -7,11 +7,16 @@ const RoomSchema = new mongoose.Schema({
         trim: true,
         lowercase: true
     },
-    number: {
+    maxPeople: {
         type: Number,
-        required: true,
-        trim: true,
-        lowercase: true
+        default: 1,
+        validate: value => {
+            if (value <= 0) {
+                throw new Error(
+                    'Minimum 1 person'
+                )
+            }
+        }
     },
     booked: {
         type: Boolean
