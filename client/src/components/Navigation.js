@@ -1,7 +1,8 @@
 import React from 'react'
-import { Layout, Menu } from 'antd'
-import { Content, Footer, Header } from 'antd/lib/layout/layout'
 import { Link } from 'react-router-dom'
+
+import { Layout, Menu } from 'antd'
+const { Content, Footer, Header } = Layout
 
 const contentStyle = {
     display: 'flex',
@@ -20,13 +21,13 @@ const Navigation = ({ children }) => {
                         <Link to='/'>Home</Link>
                     </Menu.Item>
                     <Menu.Item key='2'>
-                        <Link to='/'>Rooms</Link>
+                        <Link to='/rooms'>Rooms</Link>
                     </Menu.Item>
                     <Menu.Item key='3'>
-                        <Link to='/'>Shop</Link>
+                        <Link to='/shop'>Shop</Link>
                     </Menu.Item>
                     <Menu.Item key='4'>
-                        <Link to='/'>Contact</Link>
+                        <Link to='/contact'>Contact</Link>
                     </Menu.Item>
                 </Menu>
             </Header>

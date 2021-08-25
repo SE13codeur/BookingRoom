@@ -18,7 +18,7 @@ const RoomSchema = new mongoose.Schema({
             }
         }
     },
-    booked: {
+    bestPrice: {
         type: Boolean
     }
 })
